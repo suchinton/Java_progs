@@ -1,11 +1,13 @@
-class prog
-{
-    public static void main(String []args)
-    {   
-        int id;
-        String name;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 
-        name = "Suchinton Chakravarty";
-        System.out.println(name);
+class prog{
+    String name;
+    byte age;
+    int salary;
+    String [] months = {"January", "Feb", "march"};
+
+    public static void main(String [] args){
+        System.out.println("\nEnter name : ");
     }
 }
