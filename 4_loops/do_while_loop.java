@@ -5,6 +5,11 @@ public class do_while_loop
 
         System.out.print("\033[H\033[2J");
         System.out.flush();
+        
+        System.out.println("| Suchinton (A2345920063)                              |");
+        System.out.println("|------------------------------------------------------|");
+        System.out.println("| Java prog to display Right Triangle number Pattern   |");
+        System.out.println("|------------------------------------------------------|");
 
         int row=1;
         int column=1;
