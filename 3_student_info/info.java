@@ -19,10 +19,10 @@ class info{
         
         System.out.println("\nName \t:: email \t:: id \n");
 
-        for(String N:name)
-        {
-            System.out.println(N + " :: ");
-        }
+        //for(String N:name)
+        //{
+        //    System.out.println(N + " :: ");
+        //}
 
         for(int i=0; i<5; i++)
         {
