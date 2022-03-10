@@ -1,8 +1,12 @@
+import java.util.Scanner;
+
 public class pal 
 {
     public static void main(String[] args) 
     {
-        String name = "sucus";
+        Scanner scan = new Scanner(System.in);
+
+        String name = scan.nextLine();
         
         StringBuilder new_name = new StringBuilder();
 
