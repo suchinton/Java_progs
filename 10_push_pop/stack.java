@@ -71,5 +71,6 @@ public class stack
             System.out.print("Do you wish to continue? : ");
             ans = scan.next().charAt(0);
         }while(ans != 'n');
+        display();
     }
 }
