@@ -9,6 +9,13 @@ public class file_read_write_mult_f
     {
         Scanner input = new Scanner(System.in);
 
+        System.out.print("\033[H\033[2J"); 
+        System.out.flush();
+        System.out.println("| Suchinton (A2345920063)                               |");
+        System.out.println("|-------------------------------------------------------|");
+        System.out.println("| Java prog to implement File Handeling                 |");
+        System.out.println("|-------------------------------------------------------|");
+
         FileOutputStream b1 = new FileOutputStream("a1.txt");
         FileOutputStream b2 = new FileOutputStream("a2.txt");
         FileOutputStream b3 = new FileOutputStream("a3.txt");

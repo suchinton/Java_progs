@@ -2,7 +2,7 @@ import java.awt.*;
 public class AwtApp extends Frame 
 {
     AwtApp()
-    {  
+    {
         Label firstName = new Label("First Name");  
         firstName.setBounds(20, 50, 80, 20);  
         
