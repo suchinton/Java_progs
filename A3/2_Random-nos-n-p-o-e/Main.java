@@ -5,9 +5,9 @@ class Main
 {
     public static void main(String[] args) 
     {
-        int[] arr = new int[20];
+        int[] arr = new int[10];
 
-        for (int i = 0; i < 20; i++) 
+        for (int i = 0; i < 10; i++) 
         {
             Random rd = new Random(); 
             arr[i] = rd.nextInt(-200,200);
@@ -21,7 +21,7 @@ class Main
             }
             else
             {
-                System.out.println("The number is Negative       : " + arr[i]);
+                System.out.println(" The number is Negative       : " + arr[i]);
             }
         }
     }
