@@ -4,7 +4,8 @@ import java.awt.*;
 
 public class Calculator extends Frame implements ActionListener
 {
-    Label Title = new Label("Simple Calculator");
+    Frame f = new Frame("Simple Calculator");
+
     Label first_no = new Label("First Number");  
     Label Sec_no = new Label("Second Number");    
     Label result = new Label("Result");
@@ -25,8 +26,6 @@ public class Calculator extends Frame implements ActionListener
 
     Calculator()
     {
-        Title.setBounds(180, 30 , 100, 20);
-        Title.setBackground(Color.LIGHT_GRAY);
         first_no.setBounds(20, 80, 100, 20);
         Sec_no.setBounds(20, 110, 100, 20);  
         result.setBounds(20, 140, 100, 20); 
@@ -42,32 +41,31 @@ public class Calculator extends Frame implements ActionListener
         Sub_B.setBounds(210, 310, 100, 20);         
         Mult_B.setBounds(310, 310, 100, 20);
         
-        add(Title);
-        add(first_no);  
-        add(Sec_no);  
-        add(result);  
-        add(Add);
-        add(Div);
-        add(Sub);
-        add(Mult);
+        f.add(first_no);  
+        f.add(Sec_no);  
+        f.add(result);  
+        f.add(Add);
+        f.add(Div);
+        f.add(Sub);
+        f.add(Mult);
         
-        add(first_noTF);  
-        add(Sec_noTF);  
-        add(resultTF);
+        f.add(first_noTF);  
+        f.add(Sec_noTF);  
+        f.add(resultTF);
 
-        add(Add_B);
-        add(Div_B);
-        add(Sub_B);
-        add(Mult_B);
+        f.add(Add_B);
+        f.add(Div_B);
+        f.add(Sub_B);
+        f.add(Mult_B);
 
         Add_B.addActionListener(this);
         Sub_B.addActionListener(this);
         Div_B.addActionListener(this);
         Mult_B.addActionListener(this);
         
-        setSize(450,400);  
-        setLayout(null);  
-        setVisible(true);  
+        f.setSize(450,400);  
+        f.setLayout(null);  
+        f.setVisible(true);  
     }
 
     public void actionPerformed(ActionEvent A)
