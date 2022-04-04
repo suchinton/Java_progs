@@ -35,7 +35,7 @@ public class Calculator extends Frame implements ActionListener
         Sec_noTF.setBounds(120, 110, 100, 20);       
         resultTF.setBounds(120, 140, 100, 20);
         resultTF.setBackground(Color.LIGHT_GRAY);
-        
+
         Add_B.setBounds(10, 310, 100, 20);       
         Div_B.setBounds(110, 310, 100, 20);          
         Sub_B.setBounds(210, 310, 100, 20);         
@@ -74,21 +74,17 @@ public class Calculator extends Frame implements ActionListener
         float no2 = Float.parseFloat(Sec_noTF.getText());
 
         if(A.getActionCommand()=="Add")
-        {
             resultTF.setText((""+(no1+no2)));
-        }
+
         else if(A.getActionCommand()=="Div")
-        {
             resultTF.setText(""+(no1/no2));
-        }
+
         else if(A.getActionCommand()=="Mult")
-        {
             resultTF.setText(""+(no1*no2));
-        }
+
         else if(A.getActionCommand()=="Sub")
-        {
             resultTF.setText(""+(no1-no2));
-        }
+
         else
             resultTF.setText("Ans");
     }
