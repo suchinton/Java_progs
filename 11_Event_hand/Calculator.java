@@ -24,7 +24,7 @@ public class Calculator extends Frame implements ActionListener
     {
         first_no.setBounds(20, 80, 100, 20);
         Sec_no.setBounds(20, 110, 100, 20);  
-        result.setBounds(20, 140, 100, 20); 
+        result.setBounds(20, 140, 100, 20);  
         result.setForeground(Color.red);
         
         first_noTF.setBounds(120, 80, 100, 20);  
