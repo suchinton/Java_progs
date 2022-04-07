@@ -1,5 +1,4 @@
 import java.awt.event.*;
-import java.util.stream.IntStream;
 import java.awt.*;
 
 public class Data extends Frame implements ActionListener
@@ -16,14 +15,6 @@ public class Data extends Frame implements ActionListener
 
     Button Submit   = new Button("Submit");
     Button Reset    = new Button("Reset");
-
-    int Date[]  = IntStream.range(1, 32).toArray();
-    String DD[] = new String[Date.length];
-
-    String MM[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-    
-    int Year[]  = IntStream.range(1900, 2023).toArray();
-    String YY[] = new String[Year.length];
 
     Choice DDC = new Choice();
     Choice MMC = new Choice();
@@ -42,20 +33,16 @@ public class Data extends Frame implements ActionListener
 
     Data()
     {
+        String MM[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
         f1 = new Font("Times New Roman",f1.BOLD,15);
         f2 = new Font("Times New Roman",f2.PLAIN,12);
 
-        for(int i=0; i<Date.length ; i++)
-        {
-            DD[i] = String.valueOf(Date[i]);
-            DDC.add(DD[i]);
-        }
+        for(int i=1; i<=31 ; i++)
+            DDC.add(Integer.toString(i));
 
-        for(int i=0; i<Year.length; i++)
-        {
-            YY[i] = String.valueOf(Year[i]);
-            YYC.add(YY[i]);
-        }
+        for(int i=2022; i>1899; i--)
+            YYC.add(Integer.toString(i));
 
         for(int i=0; i<12; i++ )
             MMC.add(MM[i]);
@@ -104,7 +91,7 @@ public class Data extends Frame implements ActionListener
         YYC.setFont(f2);
         Male.setFont(f2);
         Female.setFont(f2);
-        Agg.setFont(f2);
+        Agg.setFont(f1);
 
         f.add(Reg);
         f.add(name);
@@ -146,7 +133,8 @@ public class Data extends Frame implements ActionListener
                 Data_outTA.append("Gender    : " + Gen.getSelectedCheckbox().getLabel() + "\n" );
                 Data_outTA.append("DOB       : " + DDC.getSelectedItem() + "/" + MMC.getSelectedItem() + "/" + YYC.getSelectedItem() + "\n");
                 Data_outTA.append("Address   : " + AddressTA.getText());
-            }   
+            }
+               
             else if(A.getActionCommand()=="Reset")
             {
                 Data_outTA.setText(null);
@@ -154,6 +142,9 @@ public class Data extends Frame implements ActionListener
                 mobile_noTF.setText(null);
                 Gen.setSelectedCheckbox(null);
                 AddressTA.setText(null);
+                Male.setState(false);
+                Female.setState(false);
+                Agg.setState(false);;
             }
         }
     }
