@@ -1,8 +1,7 @@
 import java.awt.event.*;
-import javax.naming.spi.DirStateFactory.Result;
 import java.awt.*;
 
-public class Calculator extends Frame implements ActionListener
+public class Calculator extends WindowAdapter implements ActionListener
 {
     Frame f = new Frame("Simple Calculator");
 
@@ -59,11 +58,17 @@ public class Calculator extends Frame implements ActionListener
         Div_B.addActionListener(this);
         Mult_B.addActionListener(this);
         Clear.addActionListener(this);
+        f.addWindowListener (this);  
         
         f.setSize(450,400);  
         f.setLayout(null);  
         f.setVisible(true);  
     }
+
+    public void windowClosing (WindowEvent e) 
+    {   
+        f.dispose();    
+    }   
 
     public void actionPerformed(ActionEvent A)
     {

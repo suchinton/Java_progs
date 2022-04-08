@@ -1,7 +1,7 @@
 import java.awt.event.*;
-import java.awt.*;
+import java.awt.*; 
 
-public class Data extends Frame implements ActionListener
+public class Data extends WindowAdapter implements ActionListener
 {
     Font f1, f2;
     Frame f = new Frame("Registration Form");
@@ -32,7 +32,7 @@ public class Data extends Frame implements ActionListener
     Checkbox Agg      = new Checkbox("Accept Terms and Conditions.");
 
     Data()
-    {
+    { 
         String MM[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
         f1 = new Font("Times New Roman",f1.BOLD,15);
@@ -73,6 +73,7 @@ public class Data extends Frame implements ActionListener
 
         Submit.addActionListener(this);
         Reset.addActionListener(this);
+        f.addWindowListener (this);  
 
         Reg.setFont(f1);
         name.setFont(f2);
@@ -121,6 +122,11 @@ public class Data extends Frame implements ActionListener
         f.setVisible(true); 
     }
 
+    public void windowClosing (WindowEvent e) 
+    {   
+        f.dispose();    
+    }    
+    
     public void actionPerformed(ActionEvent A)
     {
         if(Agg.getState()==true)
