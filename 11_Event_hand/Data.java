@@ -14,6 +14,7 @@ public class Data extends WindowAdapter implements ActionListener
     Label Gender    = new Label("Gender");
     Label Dob       = new Label("DOB");
     Label Address   = new Label("Address");
+    Label City      = new Label("City");
 
     Label errLabel  = new Label("Please Agree to Terms and Conditions to Submit or Reset!");
 
@@ -23,6 +24,8 @@ public class Data extends WindowAdapter implements ActionListener
     Choice DDC = new Choice();
     Choice MMC = new Choice();
     Choice YYC = new Choice();
+
+    List CityL = new List(6);
 
     TextField nameTF      = new TextField();    
     TextField mobile_noTF = new TextField();
@@ -39,8 +42,15 @@ public class Data extends WindowAdapter implements ActionListener
     { 
         f.setBackground(Color.lightGray);
         f.setForeground(Color.BLACK);
-        
+
         String MM[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+        
+        CityL.add("Chennai");
+        CityL.add("Delhi");
+        CityL.add("Mumbai");
+        CityL.add("Lucknow");
+        CityL.add("Pune");
+        CityL.add("Ghaziabad");
 
         f1 = new Font("Times New Roman",f1.BOLD,15);
         f2 = new Font("Times New Roman",f2.PLAIN,12);
@@ -69,16 +79,19 @@ public class Data extends WindowAdapter implements ActionListener
         AddressTA.setBounds(140,260,200,150);
         Data_outTA.setBounds(350,140,200,270);
 
-        Submit.setBounds(140,470,100,20);
-        Reset.setBounds(250,470,100,20);
+        Submit.setBounds(140,550,100,20);
+        Reset.setBounds(250,550,100,20);
 
         DDC.setBounds(140,230,60,20);
         MMC.setBounds(200,230,60,20);
         YYC.setBounds(260,230,60,20);
 
+        City.setBounds(20,420,100,20);
+        CityL.setBounds(140,420,220,100);
+
         Male.setBounds(140,200,100,20);
         Female.setBounds(250,200,100,20);
-        Agg.setBounds(140,430,240,20);        
+        Agg.setBounds(140,520,240,20);        
 
         Submit.addActionListener(this);
         Reset.addActionListener(this);
@@ -101,6 +114,8 @@ public class Data extends WindowAdapter implements ActionListener
         DDC.setFont(f2);
         MMC.setFont(f2);
         YYC.setFont(f2);
+        City.setFont(f2);
+        CityL.setFont(f2);
         Male.setFont(f2);
         Female.setFont(f2);
         Agg.setFont(f1);
@@ -126,13 +141,16 @@ public class Data extends WindowAdapter implements ActionListener
         f.add(MMC);
         f.add(YYC);
 
+        f.add(City);
+        f.add(CityL);
+
         f.add(Male);
         f.add(Female);
         f.add(Agg);
 
         fr2.add(errLabel);
 
-        f.setSize(600,520);  
+        f.setSize(600,600);  
         f.setLayout(null);  
         f.setVisible(true); 
     }
@@ -156,7 +174,8 @@ public class Data extends WindowAdapter implements ActionListener
                 Data_outTA.append("Mobile no : " + mobile_noTF.getText() + "\n");
                 Data_outTA.append("Gender    : " + Gen.getSelectedCheckbox().getLabel() + "\n" );
                 Data_outTA.append("DOB       : " + DDC.getSelectedItem() + "/" + MMC.getSelectedItem() + "/" + YYC.getSelectedItem() + "\n");
-                Data_outTA.append("Address   : " + AddressTA.getText());
+                Data_outTA.append("Address   : " + AddressTA.getText() + "\n");
+                Data_outTA.append("City      : " + CityL.getSelectedItem());  
             }
                
             else if(A.getActionCommand()=="Reset")
