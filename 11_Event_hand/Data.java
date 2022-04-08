@@ -4,7 +4,9 @@ import java.awt.*;
 public class Data extends WindowAdapter implements ActionListener
 {
     Font f1, f2;
+    
     Frame f = new Frame("Registration Form");
+    Frame fr2 = new Frame("Error!!");
 
     Label Reg       = new Label("Registration Form");
     Label name      = new Label("Name");
@@ -12,6 +14,8 @@ public class Data extends WindowAdapter implements ActionListener
     Label Gender    = new Label("Gender");
     Label Dob       = new Label("DOB");
     Label Address   = new Label("Address");
+
+    Label errLabel  = new Label("Please Agree to Terms and Conditions to Submit or Reset!");
 
     Button Submit   = new Button("Submit");
     Button Reset    = new Button("Reset");
@@ -33,6 +37,9 @@ public class Data extends WindowAdapter implements ActionListener
 
     Data()
     { 
+        f.setBackground(Color.lightGray);
+        f.setForeground(Color.BLACK);
+        
         String MM[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 
         f1 = new Font("Times New Roman",f1.BOLD,15);
@@ -54,6 +61,8 @@ public class Data extends WindowAdapter implements ActionListener
         Dob.setBounds(20,230,100,20);
         Address.setBounds(20,260,100,20);
 
+        errLabel.setBounds(50,50,300,20);
+
         nameTF.setBounds(140,140,200,20);
         mobile_noTF.setBounds(140,170,200,20);
 
@@ -73,7 +82,9 @@ public class Data extends WindowAdapter implements ActionListener
 
         Submit.addActionListener(this);
         Reset.addActionListener(this);
-        f.addWindowListener (this);  
+
+        f.addWindowListener (this);
+        fr2.addWindowListener(this);
 
         Reg.setFont(f1);
         name.setFont(f2);
@@ -93,6 +104,8 @@ public class Data extends WindowAdapter implements ActionListener
         Male.setFont(f2);
         Female.setFont(f2);
         Agg.setFont(f1);
+
+        errLabel.setFont(f1);
 
         f.add(Reg);
         f.add(name);
@@ -117,16 +130,21 @@ public class Data extends WindowAdapter implements ActionListener
         f.add(Female);
         f.add(Agg);
 
+        fr2.add(errLabel);
+
         f.setSize(600,520);  
         f.setLayout(null);  
         f.setVisible(true); 
     }
 
     public void windowClosing (WindowEvent e) 
-    {   
-        f.dispose();    
+    {  
+        if(e.getWindow()==f)
+            f.dispose();
+        else if(e.getWindow()==fr2)
+            fr2.dispose();   
     }    
-    
+
     public void actionPerformed(ActionEvent A)
     {
         if(Agg.getState()==true)
@@ -152,6 +170,13 @@ public class Data extends WindowAdapter implements ActionListener
                 Female.setState(false);
                 Agg.setState(false);;
             }
+        }
+        else if(Agg.getState()==false && (A.getActionCommand()=="Submit" || A.getActionCommand()=="Reset"))
+        { 
+            fr2.setAlwaysOnTop(true);
+            fr2.setSize(400,100);  
+            fr2.setLayout(null);  
+            fr2.setVisible(true); 
         }
     }
 
