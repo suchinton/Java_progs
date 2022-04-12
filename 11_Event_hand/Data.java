@@ -1,22 +1,25 @@
 import java.awt.event.*;
+
+import javax.swing.*;
+
 import java.awt.*; 
 
 public class Data extends WindowAdapter implements ActionListener
 {
     Font f1, f2;
     
-    Frame f = new Frame("Registration Form");
-    Frame fr2 = new Frame("Error!!");
+    JFrame f = new JFrame("Registration Form");
+    JFrame fr2 = new JFrame("Error!!");
 
-    Label Reg       = new Label("Registration Form");
-    Label name      = new Label("Name");
-    Label mobile_no = new Label("Mobile Number");
-    Label Gender    = new Label("Gender");
-    Label Dob       = new Label("DOB");
-    Label Address   = new Label("Address");
-    Label City      = new Label("City");
+    JLabel Reg       = new JLabel("Registration Form");
+    JLabel name      = new JLabel("Name");
+    JLabel mobile_no = new JLabel("Mobile Number");
+    JLabel Gender    = new JLabel("Gender");
+    JLabel Dob       = new JLabel("DOB");
+    JLabel Address   = new JLabel("Address");
+    JLabel City      = new JLabel("City");
 
-    Label errLabel  = new Label("Please Agree to Terms and Conditions to Submit or Reset!");
+    JLabel errLabel  = new JLabel("Please Agree to Terms and Conditions to Submit or Reset!");
 
     Button Submit   = new Button("Submit");
     Button Reset    = new Button("Reset");
