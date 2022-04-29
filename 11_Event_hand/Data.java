@@ -54,6 +54,7 @@ public class Data extends WindowAdapter implements ActionListener
         CityL.add("Lucknow");
         CityL.add("Pune");
         CityL.add("Ghaziabad");
+	CityL.add("Mirzapur");
 
         f1 = new Font("Times New Roman",f1.BOLD,15);
         f2 = new Font("Times New Roman",f2.PLAIN,12);
