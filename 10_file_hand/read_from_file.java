@@ -24,6 +24,7 @@ public class read_from_file
                 System.out.print((char) ch);
             }
         }
+
         finally
         {
             fr.close();
